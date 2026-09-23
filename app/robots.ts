@@ -1,5 +1,10 @@
-import { NextResponse } from 'next/server'
+import type { MetadataRoute } from 'next'
 
-export function GET(){
-  return new NextResponse('User-agent: *\nAllow: /')
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/'
+    }
+  }
 }
