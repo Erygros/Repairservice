@@ -13,7 +13,7 @@ function WhatsAppIcon({className='w-5 h-5'}: {className?: string}){
 export default function WhatsAppButton({label='WhatsApp', message, className=''}:{label?:string; message?:string; className?:string}){
   const href = message ? `${WA_LINK}?text=${encodeURIComponent(message)}` : WA_LINK
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 bg-[#25D366] text-black font-semibold px-4 py-2 rounded shadow ${className}`}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`whatsapp-button inline-flex items-center gap-2 font-semibold px-4 py-2 shadow ${className}`}>
       <WhatsAppIcon />
       <span>{label}</span>
     </a>

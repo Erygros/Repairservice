@@ -1,3 +1,3 @@
-import ServicePage from '../../components/ServicePage'
+import FAQ from '../../components/FAQ'
 export const metadata = { title: 'FAQ | GROSS SERVICES', description: 'Antworten zu Diagnose, Reparatur, Kosten und Versand.' }
-export default function FAQPage(){ return <ServicePage eyebrow="SERVICE / FAQ" title="Fragen vor der Einsendung?" intro="Hier findest du die wichtigsten Orientierungspunkte. Für ein konkretes Gerät ist eine direkte Anfrage am schnellsten." items={['Welche Geräte werden angenommen? Kameras, Audio-/Videogeräte, Netzteile, Platinen und weitere Kleingeräte.','Was kostet die Reparatur? Die Arbeitszeit beträgt 20 € pro Stunde; der Aufwand wird nach der Diagnose eingeschätzt.','Kann jedes Gerät repariert werden? Das hängt vom Fehler, Zustand und der Ersatzteillage ab.','Wie starte ich eine Anfrage? Beschreibe Gerät und Fehlerbild über WhatsApp.']} related={[{href:'/reparaturen',label:'Reparaturübersicht'},{href:'/ablauf',label:'Ablauf der Reparatur'},{href:'/versand',label:'Versand & Einsendung'}]} /> }
+export default function FAQPage(){ return <div className="service-page"><FAQ /></div> }

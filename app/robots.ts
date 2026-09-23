@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/'
-    }
+    },
+    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://repairservice.vercel.app'}/sitemap.xml`
   }
 }
