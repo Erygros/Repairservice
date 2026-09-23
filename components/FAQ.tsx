@@ -13,22 +13,7 @@ import WhatsAppButton from './WhatsAppButton'
 
 export default function FAQ(){
   return (
-    <div className="container py-16">
-      <h2 className="text-2xl font-bold">FAQ</h2>
-      <div className="mt-4 grid md:grid-cols-2 gap-4">
-        {FAQS.map(f=> (
-          <div key={f.q} className="p-4 bg-[color:var(--card)] rounded border border-gray-800">
-            <div className="font-semibold">{f.q}</div>
-            <div className="text-sm text-gray-400 mt-2">{f.a}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-8 text-center">
-        <div className="text-lg font-semibold">Gerät defekt?</div>
-        <div className="text-gray-300 mt-2">Beschreib uns kurz das Problem. Wir klären gemeinsam, ob eine Reparatur sinnvoll ist.</div>
-        <div className="mt-4"><WhatsAppButton label="Reparatur über WhatsApp anfragen" message="Hallo, ich möchte eine Reparatur anfragen. Mein Gerät ist: ; Der Fehler ist: " /></div>
-      </div>
-    </div>
+    <section className="faq-overview"><div className="faq-heading"><div><div className="section-kicker"><span>08</span> SERVICE / ANTWORTEN</div><h2>Häufige<br /><em>Fragen</em></h2></div><p>Die wichtigsten Antworten zu Diagnose, Kosten und Einsendung auf einen Blick.</p></div><div className="faq-list">{FAQS.map((f,index) => <details key={f.q}><summary><span>0{index + 1}</span>{f.q}<b>+</b></summary><p>{f.a}</p></details>)}</div><div className="faq-cta"><div><strong>Gerät defekt?</strong><span>Beschreib uns kurz das Problem. Wir klären gemeinsam, ob eine Reparatur sinnvoll ist.</span></div><WhatsAppButton label="Reparatur über WhatsApp anfragen" message="Hallo, ich möchte eine Reparatur anfragen. Mein Gerät ist: ; Der Fehler ist: " /></div>
+    </section>
   )
 }

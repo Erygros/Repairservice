@@ -14,29 +14,20 @@ export default function RepairList(){
   },[q,flattened])
 
   return (
-    <div className="container py-16">
-      <h2 className="text-2xl font-bold">Reparaturen & Geräteübersicht</h2>
-      <p className="text-gray-400 mt-2">Schnell suchen: z.B. „Kamera“, „Canon“, „Netzteil“.</p>
-
-      <div className="mt-4">
-        <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Suchen..." className="w-full p-3 bg-[color:var(--card)] border border-gray-800 rounded" />
+    <section className="device-overview">
+      <div className="device-overview-heading">
+        <div><div className="section-kicker"><span>03</span> GERÄTE / SUCHINDEX</div><h2>Reparaturen &<br /><em>Geräteübersicht</em></h2></div>
+        <label className="device-search"><span>Suche nach Gerät oder Kategorie</span><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Kamera, Canon, Netzteil ..." /></label>
       </div>
-
-      <div className="mt-6 grid md:grid-cols-3 gap-4">
+      <div className="device-grid">
         {filtered.length === 0 ? (
-          <div className="p-6 bg-[color:var(--card)] rounded"> 
-            <p className="text-gray-300">Nicht gefunden? Schreib uns direkt über WhatsApp.</p>
-            <div className="mt-3"><WhatsAppButton label="WhatsApp" /></div>
+          <div className="device-empty">
+            <p>Nicht gefunden? Schreib uns direkt über WhatsApp.</p><WhatsAppButton label="WhatsApp" />
           </div>
         ) : filtered.map((f,idx)=> (
-          <div key={idx} className="p-4 bg-[color:var(--card)] rounded border border-gray-800">
-            <div className="text-sm text-gray-400">{f.category}</div>
-            <div className="mt-2 font-semibold">{f.item}</div>
-            <div className="mt-3 text-xs text-gray-400">Ob eine Reparatur möglich und wirtschaftlich sinnvoll ist, wird nach einer technischen Diagnose beurteilt.</div>
-            <div className="mt-3"><WhatsAppButton label="Reparatur anfragen" message={`Hallo, ich habe ein ${f.item} und möchte wissen, ob eine Reparatur möglich ist.`} /></div>
-          </div>
+          <div key={idx} className="device-item"><span className="device-category">{f.category}</span><strong>{f.item}</strong><span className="device-note">Technische Diagnose nach Einsendung</span><WhatsAppButton label="Anfragen" message={`Hallo, ich habe ein ${f.item} und möchte wissen, ob eine Reparatur möglich ist.`} /></div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

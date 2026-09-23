@@ -7,19 +7,13 @@ export default function RepairProcess(){
   ]
 
   return (
-    <div className="container py-16">
-      <h2 className="text-2xl font-bold">So läuft die Reparatur ab</h2>
-      <p className="text-gray-400 mt-2">Vor einer Reparatur wird das weitere Vorgehen mit dir abgestimmt.</p>
-
-      <div className="mt-6 grid md:grid-cols-4 gap-4">
+    <section className="process-overview">
+      <div className="process-heading"><div><div className="section-kicker"><span>05</span> SERVICE / ABLAUF</div><h2>So läuft die<br /><em>Reparatur ab</em></h2></div><p>Vor einer Reparatur wird das weitere Vorgehen mit dir abgestimmt.</p></div>
+      <div className="process-line">
         {steps.map(s=> (
-          <div key={s.n} className="p-4 bg-[color:var(--card)] rounded border border-gray-800 text-center">
-            <div className="font-mono text-sm text-gray-400">{s.n}</div>
-            <div className="font-semibold mt-2">{s.title}</div>
-            <div className="text-sm text-gray-400 mt-2">{s.desc}</div>
-          </div>
+          <div key={s.n} className="process-step"><span>{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

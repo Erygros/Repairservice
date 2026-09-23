@@ -15,22 +15,10 @@ const EXAMPLES = [
 
 export default function RepairExamples(){
   return (
-    <div className="container py-16">
-      <h2 className="text-2xl font-bold">Beispiele & Fehlerbilder</h2>
-      <p className="text-gray-400 mt-2">Erkennst du dein Problem wieder? Das hilft bei der ersten Einschätzung.</p>
-
-      <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {EXAMPLES.map((e)=> (
-          <div key={e} className="p-4 bg-[color:var(--card)] rounded border border-gray-800">
-            <div className="font-semibold">{e}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-6">
-        <div className="text-gray-300">Du findest deinen Fehler nicht?</div>
-        <div className="mt-3"><WhatsAppButton label="Fehler über WhatsApp beschreiben" message="Hallo, ich möchte den Fehler meines Geräts beschreiben: " /></div>
-      </div>
-    </div>
+    <section className="fault-overview">
+      <div className="fault-overview-heading"><div><div className="section-kicker"><span>04</span> DIAGNOSE / FEHLERBILDER</div><h2>Beispiele &<br /><em>Fehlerbilder</em></h2></div><p>Erkennst du dein Problem wieder? Eine klare Beschreibung hilft bei der ersten technischen Einschätzung.</p></div>
+      <div className="fault-list">{EXAMPLES.map((e, index) => <div key={e}><span>0{index + 1}</span><strong>{e}</strong><i aria-hidden="true">↗</i></div>)}</div>
+      <div className="fault-cta"><span>Du findest deinen Fehler nicht?</span><WhatsAppButton label="Fehler über WhatsApp beschreiben" message="Hallo, ich möchte den Fehler meines Geräts beschreiben: " /></div>
+    </section>
   )
 }
