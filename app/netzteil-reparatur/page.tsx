@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Netzteil-Reparatur | GROSS SERVICES', description: 'Diagnose von Netzteilen, Stromversorgungen und Ladeproblemen.' }
+export default function NetzteilReparatur(){ return <ServicePage eyebrow="REPARATUR / STROM" title="Netzteil-Reparatur" intro="Wenn ein Gerät nicht startet, prüfen wir Netzteil, Ladeweg und nachgelagerte Stromversorgung." items={['Netzteile für Kleingeräte','Interne Stromversorgungen','Lade- und Startprobleme','Spannungsversorgung elektronischer Baugruppen']} related={[{href:'/platinen-reparatur',label:'Platinen-Reparatur'},{href:'/audio-reparatur',label:'Audio-Reparatur'},{href:'/versand',label:'Versand & Einsendung'}]} /> }

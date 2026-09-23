@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Versand & Einsendung | GROSS SERVICES', description: 'So senden Sie Ihr defektes Gerät sicher zur Diagnose und Reparatur ein.' }
+export default function Versand(){ return <ServicePage eyebrow="SERVICE / VERSAND" title="Sicher einsenden." intro="Verpacke dein Gerät transportsicher und sende es nach kurzer Anfrage zur technischen Diagnose ein." items={['Gerät und Zubehör kurz beschreiben','Stoßsicher und trocken verpacken','Fehlerbild und Kontaktdaten beilegen','Nach Diagnose erhältst du eine klare Rückmeldung']} related={[{href:'/ablauf',label:'Ablauf der Reparatur'},{href:'/preise',label:'Preise & Diagnose'},{href:'/faq',label:'Häufige Fragen'}]} /> }

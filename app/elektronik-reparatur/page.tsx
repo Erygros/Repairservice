@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Elektronik-Reparatur | GROSS SERVICES', description: 'Diagnose und Reparatur elektronischer Baugruppen und Bedienelemente.' }
+export default function ElektronikReparatur(){ return <ServicePage eyebrow="REPARATUR / ELEKTRONIK" title="Elektronik-Reparatur" intro="Für elektronische Baugruppen, Displays, Schalter, Taster und Bedienelemente mit unklaren Fehlerbildern." items={['Elektronische Baugruppen','Displays und Anzeigen','Schalter, Taster und Bedienelemente','USB-, DC- und Audio-Buchsen']} related={[{href:'/platinen-reparatur',label:'Platinen-Reparatur'},{href:'/netzteil-reparatur',label:'Netzteil-Reparatur'},{href:'/kamera-reparatur',label:'Kamera-Reparatur'}]} /> }

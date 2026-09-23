@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Audio-Reparatur | GROSS SERVICES', description: 'Reparatur von DVD-Playern, Blu-ray-Playern, VHS, Receivern, Verstärkern und CD-Playern.' }
+export default function AudioReparatur(){ return <ServicePage eyebrow="REPARATUR / AUDIO & HIFI" title="Audio-Reparatur" intro="Player, Receiver und Verstärker werden auf Signalwege, Netzteil und Bedienelemente geprüft." items={['DVD- und Blu-ray-Player','VHS- und CD-Player','Receiver und Verstärker','Kein Ton, Aussetzer oder Laufwerksfehler']} related={[{href:'/netzteil-reparatur',label:'Netzteil-Reparatur'},{href:'/platinen-reparatur',label:'Platinen-Reparatur'},{href:'/ablauf',label:'Ablauf der Reparatur'}]} /> }

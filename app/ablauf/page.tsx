@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Ablauf der Reparatur | GROSS SERVICES', description: 'Vom ersten Fehlerbild über die Diagnose bis zur Rücksendung.' }
+export default function Ablauf(){ return <ServicePage eyebrow="SERVICE / ABLAUF" title="Vom Fehlerbild bis zurück zum Gerät." intro="Eine Reparatur beginnt mit einer guten Beschreibung und endet mit einer nachvollziehbaren Diagnose." items={['Anfrage mit Gerät und Fehlerbild','Technische Eingangskontrolle','Diagnose und Einschätzung der Reparatur','Freigabe, Reparatur und Rücksendung']} related={[{href:'/reparaturen',label:'Reparaturen ansehen'},{href:'/preise',label:'Preise ansehen'},{href:'/versand',label:'Versand & Einsendung'}]} /> }

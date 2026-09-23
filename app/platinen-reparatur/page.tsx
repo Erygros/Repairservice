@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Platinen-Reparatur | GROSS SERVICES', description: 'Reparatur von Steuerplatinen, Displays und elektronischen Anschlüssen.' }
+export default function PlatinenReparatur(){ return <ServicePage eyebrow="REPARATUR / BAUGRUPPEN" title="Platinen-Reparatur" intro="Steuerplatinen und elektronische Baugruppen werden unter dem Mikroskop und im Betrieb geprüft." items={['Steuerplatinen und Leiterplatten','Fehlerhafte Lötstellen und Bauteile','USB-, DC- und Audio-Anschlüsse','Korrosion und Stromversorgung']} related={[{href:'/elektronik-reparatur',label:'Elektronik-Reparatur'},{href:'/netzteil-reparatur',label:'Netzteil-Reparatur'},{href:'/preise',label:'Preise & Diagnose'}]} /> }

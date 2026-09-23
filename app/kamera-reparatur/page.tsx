@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Kamera-Reparatur | GROSS SERVICES', description: 'Reparatur von Digitalkameras, Camcordern und Objektiven.' }
+export default function KameraReparatur(){ return <ServicePage eyebrow="REPARATUR / KAMERA" title="Kamera-Reparatur" intro="Digitalkameras, Camcorder und Objektive: Wir prüfen Stromversorgung, Mechanik, Anschlüsse und Elektronik." items={['Digitalkameras und Kompaktkameras','Camcorder und Videoaufzeichnung','Objektive und mechanische Baugruppen','Akku-, Lade- und Anschlussprobleme']} related={[{href:'/audio-reparatur',label:'Audio-Reparatur'},{href:'/elektronik-reparatur',label:'Elektronik-Reparatur'},{href:'/versand',label:'Versand & Einsendung'}]} /> }

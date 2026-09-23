@@ -1,0 +1,3 @@
+import ServicePage from '../../components/ServicePage'
+export const metadata = { title: 'Preise | GROSS SERVICES', description: 'Informationen zu Arbeitszeit, Diagnose und Reparaturkosten.' }
+export default function Preise(){ return <ServicePage eyebrow="SERVICE / PREISE" title="Klare Arbeitszeit. Klare Entscheidung." intro="Die Arbeitszeit beträgt 20 € pro Stunde. Ob eine Reparatur sinnvoll ist, klären wir nach der technischen Diagnose." items={['20 € Arbeitszeit pro Stunde','Diagnose vor einer Reparaturentscheidung','Keine erfundenen Pauschalen ohne Befund','Rücksprache, bevor weitere Arbeit entsteht']} related={[{href:'/ablauf',label:'Ablauf der Reparatur'},{href:'/versand',label:'Versand & Einsendung'},{href:'/faq',label:'Häufige Fragen'}]} /> }

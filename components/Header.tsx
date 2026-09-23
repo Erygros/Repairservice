@@ -1,26 +1,97 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import GlobalSearch from './GlobalSearch'
+import Logo from './Logo'
 import WhatsAppButton from './WhatsAppButton'
 
+const leftLinks = [
+  { href: '/', label: 'Startseite' },
+  { href: '/reparaturen', label: 'Reparaturen' },
+  { href: '/kamera-reparatur', label: 'Geräte' },
+  { href: '/reparaturen#fehlerbilder', label: 'Fehlerbilder' }
+]
+
+const rightLinks = [
+  { href: '/ablauf', label: 'Ablauf' },
+  { href: '/preise', label: 'Preise' },
+  { href: '/versand', label: 'Versand' },
+  { href: '/faq', label: 'FAQ' }
+]
+
+const repairLinks = [
+  { href: '/kamera-reparatur', label: 'Kamera-Reparatur' },
+  { href: '/audio-reparatur', label: 'Audio-Reparatur' },
+  { href: '/elektronik-reparatur', label: 'Elektronik-Reparatur' },
+  { href: '/platinen-reparatur', label: 'Platinen-Reparatur' },
+  { href: '/netzteil-reparatur', label: 'Netzteil-Reparatur' }
+]
+
+function SearchIcon(){
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 4.5 4.5"/></svg>
+}
+
+function MenuIcon({open}: {open: boolean}){
+  return <span className={`menu-icon ${open ? 'is-open' : ''}`} aria-hidden="true"><i /><i /><i /></span>
+}
+
 export default function Header(){
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes((event.target as HTMLElement)?.tagName)) {
+        event.preventDefault()
+        setSearchOpen(true)
+      }
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        setSearchOpen(false)
+      }
+    }
+    window.addEventListener('scroll', onScroll, {passive: true})
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [])
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-black/60 backdrop-blur z-40">
-      <div className="container flex items-center justify-between h-16">
-        <div className="flex items-center gap-4">
-          <div className="text-white font-semibold">[UNTERNEHMENSNAME EINTRAGEN]</div>
+    <>
+      <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
+        <div className="nav-shell">
+          <button className="mobile-nav-button" type="button" onClick={() => setMenuOpen(true)} aria-label="Menü öffnen" aria-expanded={menuOpen}>
+            <MenuIcon open={false} />
+          </button>
+          <nav className="desktop-nav desktop-nav-left" aria-label="Hauptnavigation links">
+            {leftLinks.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+          </nav>
+          <Link className="header-logo" href="/" aria-label="GROSS SERVICES Startseite"><Logo /></Link>
+          <nav className="desktop-nav desktop-nav-right" aria-label="Hauptnavigation rechts">
+            {rightLinks.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+            <button className="search-button" type="button" onClick={() => setSearchOpen(true)} aria-label="Website durchsuchen" title="Suche öffnen"><SearchIcon /></button>
+          </nav>
+          <div className="mobile-nav-actions"><button className="search-button" type="button" onClick={() => setSearchOpen(true)} aria-label="Website durchsuchen" title="Suche öffnen"><SearchIcon /></button></div>
+          <div className="header-contact"><WhatsAppButton label="Anfrage" className="header-whatsapp" /></div>
         </div>
-        <nav className="hidden md:flex gap-6 items-center text-sm text-gray-300">
-          <a href="#hero">Start</a>
-          <a href="#repairs">Reparaturen</a>
-          <a href="#examples">Fehlerbilder</a>
-          <a href="#process">Ablauf</a>
-          <a href="#pricing">Preise</a>
-          <a href="#shipping">Versand</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-        <div className="flex items-center gap-3">
-          <WhatsAppButton label="Anfrage" />
+      </header>
+
+      <div className={`mobile-menu ${menuOpen ? 'is-open' : ''}`} aria-hidden={!menuOpen}>
+        <div className="mobile-menu-top"><span>Navigation</span><button type="button" onClick={closeMenu} aria-label="Menü schließen"><MenuIcon open={true} /></button></div>
+        <div className="mobile-menu-content">
+          <div className="mobile-menu-group"><span className="menu-kicker">Reparaturen</span>{repairLinks.map(link => <Link key={link.href} href={link.href} onClick={closeMenu}>{link.label}</Link>)}</div>
+          <div className="mobile-menu-group"><span className="menu-kicker">Service</span>{rightLinks.map(link => <Link key={link.href} href={link.href} onClick={closeMenu}>{link.label}</Link>)}<Link href="/" onClick={closeMenu}>Startseite</Link></div>
+          <WhatsAppButton label="Reparatur anfragen" className="mobile-menu-cta" />
         </div>
       </div>
-    </header>
+      <GlobalSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
+    </>
   )
 }
