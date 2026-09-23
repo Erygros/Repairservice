@@ -1,25 +1,40 @@
 import { REPAIRS } from '../data/repairs'
+import Link from 'next/link'
 import WhatsAppButton from './WhatsAppButton'
+
+const categoryLinks: Record<string, string> = {
+  'Kameras': '/kamera-reparatur',
+  'Audio & HiFi': '/audio-reparatur',
+  'Netzteile & Strom': '/netzteil-reparatur',
+  'Elektronik & Platinen': '/platinen-reparatur',
+  'Bedienelemente': '/elektronik-reparatur'
+}
 
 export default function RepairCategories(){
   return (
-    <div className="container py-16">
-      <h2 className="text-2xl font-bold">Was wird repariert?</h2>
-      <p className="text-gray-400 mt-2 max-w-2xl">Kompakte elektronische Geräte und Baugruppen — per Versand einsenden.</p>
+    <section className="repair-overview">
+      <div className="repair-overview-heading">
+        <div>
+          <div className="repair-overview-kicker"><span>02</span> REPARATUR / ÜBERSICHT</div>
+          <h2>Was wird<br /><em>repariert?</em></h2>
+        </div>
+        <div className="repair-overview-intro">
+          <p>Kompakte elektronische Geräte und Baugruppen. Jede Anfrage beginnt mit einer technischen Einschätzung.</p>
+          <WhatsAppButton label="Reparatur anfragen" message="Hallo, ich habe ein Gerät und möchte den Versand zur Reparatur besprechen." className="overview-whatsapp" />
+        </div>
+      </div>
 
-      <div className="grid md:grid-cols-4 gap-6 mt-6">
-        {REPAIRS.map((r)=> (
-          <div key={r.category} className="bg-[color:var(--card)] p-4 rounded border border-gray-800">
-            <div className="h-10 w-10 bg-gray-800 rounded flex items-center justify-center text-sm">🔧</div>
-            <h3 className="mt-3 font-semibold">{r.category}</h3>
-            <p className="text-sm text-gray-400 mt-1">{r.description}</p>
-          </div>
+      <div className="repair-overview-grid">
+        {REPAIRS.map((repair, index) => (
+          <Link key={repair.category} href={categoryLinks[repair.category] ?? '/reparaturen'} className="repair-overview-item">
+            <span className="repair-overview-index">0{index + 1}</span>
+            <span className="repair-overview-arrow" aria-hidden="true">↗</span>
+            <h3>{repair.category}</h3>
+            <p>{repair.description}</p>
+            <span className="repair-overview-items">{repair.items.join(' / ')}</span>
+          </Link>
         ))}
       </div>
-
-      <div className="mt-6">
-        <WhatsAppButton label="Versand & Reparatur anfragen" message="Hallo, ich habe ein Gerät und möchte den Versand zur Reparatur besprechen." />
-      </div>
-    </div>
+    </section>
   )
 }

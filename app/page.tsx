@@ -8,7 +8,6 @@ import RepairProcess from '../components/RepairProcess'
 import Pricing from '../components/Pricing'
 import Shipping from '../components/Shipping'
 import FAQ from '../components/FAQ'
-import RepairVideo from '../components/RepairVideo'
 
 export default function Page(){
   return (
@@ -21,7 +20,6 @@ export default function Page(){
       <section id="pricing"><Pricing /></section>
       <section id="shipping"><Shipping /></section>
       <section id="faq"><FAQ /></section>
-      <RepairVideo />
     </>
   )
 }
