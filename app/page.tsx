@@ -1,3 +1,5 @@
+'use client'
+
 import Hero from '../components/Hero'
 import RepairCategories from '../components/RepairCategories'
 import RepairList from '../components/RepairList'
