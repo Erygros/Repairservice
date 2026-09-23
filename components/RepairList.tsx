@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useMemo } from 'react'
 import { REPAIRS } from '../data/repairs'
 import WhatsAppButton from './WhatsAppButton'
