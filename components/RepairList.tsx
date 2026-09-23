@@ -14,10 +14,10 @@ export default function RepairList(){
   },[q,flattened])
 
   return (
-    <section className="device-overview">
+    <section id="geraete" className="device-overview">
       <div className="device-overview-heading">
         <div><h2>Reparaturen &<br /><em>Geräteübersicht</em></h2></div>
-        <label className="device-search"><span>Gerät oder Kategorie suchen</span><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Kamera, Canon, Netzteil ..." /></label>
+        <label className="device-search"><span>Gerät oder Kategorie suchen</span><input type="search" value={q} onChange={e=>setQ(e.target.value)} placeholder="Kamera, Canon, Netzteil ..." aria-label="Gerät oder Kategorie suchen" autoComplete="off" /></label>
       </div>
       <div className="device-grid">
         {filtered.length === 0 ? (

@@ -82,6 +82,7 @@ body{
 @media (max-width: 800px){.service-page{padding-top:64px}.service-hero{min-height:390px}.service-hero-inner{padding:4.5rem 1rem 3.5rem}.service-content{grid-template-columns:1fr;gap:3rem;padding-top:3.5rem}.service-list{grid-template-columns:1fr}.service-aside{border-left:0;border-top:1px solid var(--line);padding:1.5rem 0 0}.repair-directory{padding-top:3.5rem}.repair-directory-grid{grid-template-columns:1fr}.repair-directory-grid article{min-height:auto}}
 @media (max-width: 600px){.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:.8rem 1rem}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.site-header,.brand-emblem,.header-logo,.mobile-menu,.desktop-nav a::after,.hero-image,.hero-whatsapp{transition:none}}
+.device-overview h2{font-size:clamp(2rem,3.8vw,4.2rem);line-height:.92;letter-spacing:-.035em}
 .whatsapp-button{border:1px solid var(--line);border-radius:0;background:#151b1e;color:var(--accent-soft);transition:transform .3s cubic-bezier(.22,1,.36,1),background .25s ease,border-color .25s ease,box-shadow .25s ease}.whatsapp-button:hover,.whatsapp-button:focus-visible{background:#1c2427;border-color:var(--accent);box-shadow:0 8px 22px rgba(0,0,0,.25);transform:translateY(-2px)}
 .hero-whatsapp{background:#151b1e!important;box-shadow:none!important}.hero-whatsapp:hover,.hero-whatsapp:focus-visible{box-shadow:0 8px 22px rgba(0,0,0,.25)!important}
 .overview-whatsapp,.shipping-whatsapp,.mobile-menu-cta{background:#151b1e!important;box-shadow:none!important}
