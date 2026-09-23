@@ -15,7 +15,6 @@ export default function RepairCategories(){
     <section className="repair-overview">
       <div className="repair-overview-heading">
         <div>
-          <div className="repair-overview-kicker"><span>02</span> REPARATUR / ÜBERSICHT</div>
           <h2>Was wird<br /><em>repariert?</em></h2>
         </div>
         <div className="repair-overview-intro">
@@ -25,9 +24,8 @@ export default function RepairCategories(){
       </div>
 
       <div className="repair-overview-grid">
-        {REPAIRS.map((repair, index) => (
+        {REPAIRS.map((repair) => (
           <Link key={repair.category} href={categoryLinks[repair.category] ?? '/reparaturen'} className="repair-overview-item">
-            <span className="repair-overview-index">0{index + 1}</span>
             <span className="repair-overview-arrow" aria-hidden="true">↗</span>
             <h3>{repair.category}</h3>
             <p>{repair.description}</p>

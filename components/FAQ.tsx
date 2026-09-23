@@ -13,7 +13,7 @@ import WhatsAppButton from './WhatsAppButton'
 
 export default function FAQ(){
   return (
-    <section className="faq-overview"><div className="faq-heading"><div><div className="section-kicker"><span>08</span> SERVICE / ANTWORTEN</div><h2>Häufige<br /><em>Fragen</em></h2></div><p>Die wichtigsten Antworten zu Diagnose, Kosten und Einsendung auf einen Blick.</p></div><div className="faq-list">{FAQS.map((f,index) => <details key={f.q}><summary><span>0{index + 1}</span>{f.q}<b>+</b></summary><p>{f.a}</p></details>)}</div><div className="faq-cta"><div><strong>Gerät defekt?</strong><span>Beschreib uns kurz das Problem. Wir klären gemeinsam, ob eine Reparatur sinnvoll ist.</span></div><WhatsAppButton label="Reparatur über WhatsApp anfragen" message="Hallo, ich möchte eine Reparatur anfragen. Mein Gerät ist: ; Der Fehler ist: " /></div>
+    <section className="faq-overview"><div className="faq-heading"><div><h2>Häufige<br /><em>Fragen</em></h2></div><p>Antworten zu Diagnose, Kosten und Einsendung.</p></div><div className="faq-list">{FAQS.map(f => <details key={f.q}><summary>{f.q}<b>+</b></summary><p>{f.a}</p></details>)}</div><div className="faq-cta"><div><strong>Gerät defekt?</strong><span>Beschreib uns kurz das Problem. Wir klären gemeinsam, ob eine Reparatur sinnvoll ist.</span></div><WhatsAppButton label="Reparatur über WhatsApp anfragen" message="Hallo, ich möchte eine Reparatur anfragen. Mein Gerät ist: ; Der Fehler ist: " /></div>
     </section>
   )
 }

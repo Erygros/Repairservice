@@ -16,8 +16,8 @@ export default function RepairList(){
   return (
     <section className="device-overview">
       <div className="device-overview-heading">
-        <div><div className="section-kicker"><span>03</span> GERÄTE / SUCHINDEX</div><h2>Reparaturen &<br /><em>Geräteübersicht</em></h2></div>
-        <label className="device-search"><span>Suche nach Gerät oder Kategorie</span><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Kamera, Canon, Netzteil ..." /></label>
+        <div><h2>Reparaturen &<br /><em>Geräteübersicht</em></h2></div>
+        <label className="device-search"><span>Gerät oder Kategorie suchen</span><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Kamera, Canon, Netzteil ..." /></label>
       </div>
       <div className="device-grid">
         {filtered.length === 0 ? (

@@ -16,8 +16,8 @@ const EXAMPLES = [
 export default function RepairExamples(){
   return (
     <section className="fault-overview">
-      <div className="fault-overview-heading"><div><div className="section-kicker"><span>04</span> DIAGNOSE / FEHLERBILDER</div><h2>Beispiele &<br /><em>Fehlerbilder</em></h2></div><p>Erkennst du dein Problem wieder? Eine klare Beschreibung hilft bei der ersten technischen Einschätzung.</p></div>
-      <div className="fault-list">{EXAMPLES.map((e, index) => <div key={e}><span>0{index + 1}</span><strong>{e}</strong><i aria-hidden="true">↗</i></div>)}</div>
+      <div className="fault-overview-heading"><div><h2>Beispiele &<br /><em>Fehlerbilder</em></h2></div><p>Diese Angaben helfen bei der ersten Einschätzung des Geräts.</p></div>
+      <div className="fault-list">{EXAMPLES.map(e => <div key={e}><strong>{e}</strong><i aria-hidden="true">↗</i></div>)}</div>
       <div className="fault-cta"><span>Du findest deinen Fehler nicht?</span><WhatsAppButton label="Fehler über WhatsApp beschreiben" message="Hallo, ich möchte den Fehler meines Geräts beschreiben: " /></div>
     </section>
   )

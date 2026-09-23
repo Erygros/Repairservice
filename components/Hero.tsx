@@ -6,9 +6,8 @@ export default function Hero(){
     <div className="hero-stage">
       <div className="hero-copy">
         <div className="hero-copy-inner">
-          <div className="hero-kicker"><span>01</span> ELEKTRONIK / DIAGNOSE / REPARATUR</div>
           <h1>Elektronik<br /><em>reparieren.</em></h1>
-          <p>Elektronische Kleingeräte professionell prüfen und reparieren lassen – deutschlandweit per Versand.</p>
+          <p>Elektronische Kleingeräte prüfen und reparieren lassen. Einsendung nach vorheriger Abstimmung.</p>
           <WhatsAppButton label="Reparatur anfragen" message="Hallo, ich möchte ein Gerät zur Reparatur anfragen." className="hero-whatsapp" />
         </div>
       </div>
@@ -22,7 +21,6 @@ export default function Hero(){
             sizes="(max-width: 800px) 100vw, 70vw"
             className="hero-image"
           />
-          <span className="hero-image-label">DETAIL / PCB 01</span>
           <span className="hero-image-mark hero-image-mark-top" aria-hidden="true" />
           <span className="hero-image-mark hero-image-mark-bottom" aria-hidden="true" />
         </div>
